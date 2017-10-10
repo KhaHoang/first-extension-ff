@@ -1,0 +1,29 @@
+1. Create a new directory and navigate to it:
+
+mkdir borderify
+cd borderify
+
+2. manifest.json
+
+Now create a new file called "manifest.json" directly under the "borderify" directory. Give it the following contents:
+
+{
+
+  "manifest_version": 2,
+  "name": "Borderify",
+  "version": "1.0",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["borderify.js"]
+    }
+  ]
+
+}
